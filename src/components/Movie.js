@@ -1,11 +1,21 @@
 import React from 'react';
+import { useGlobalcontext } from '../context/context';
 
-const Movie = () => {
+const Movies = () => {
+    const { movie }=useGlobalcontext();
   return (
-    <div>
-      
-    </div>
+    <>
+    {movie && movie.map((curr)=>{
+        return(
+        <div>
+         <h2>{curr.Title}</h2>
+        </div>
+        );
+    })}
+
+    </>
+    
   );
 }
 
-export default Movie;
+export default Movies;
